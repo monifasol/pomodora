@@ -1,11 +1,11 @@
-# Hey, I'm ![logo pomodora](https://github.com/monifasol/pomodora/blob/master/src/images/logo-github.png)!
+# Hey, I'm <img src="https://github.com/monifasol/pomodora/blob/master/src/images/logo-github.png" width="150">!
 
 ### Pomodoro Timer    
 Break down your focus periods into 25 minutes slots followed by 5 minutes resting time.
 
 [Visit and use pomodora!](https://url)
 
-![image of pomodora character](https://github.com/monifasol/pomodora/blob/master/src/images/tomato-github.png)
+<img src="https://github.com/monifasol/pomodora/blob/master/src/images/tomato-github.png" width="200">
 
 ## How do I work?
 
