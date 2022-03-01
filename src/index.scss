@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  color: #333;
+  background-color: #FFECF3;
+  font-family: 'Libre Baskerville', serif;
+}
+
+p {
+  margin: 0;
+}
+
+.pomodora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;   // leave space for logo
+
+  .logo-pomodora {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 250px;
+  }
+}
+
+.main-flex-container {
+  display: flex;
+  flex-direction: row;
+
+  .time-slots-display {
+    
+  }
+
+  .tomato-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}
+
+
+
+
+.tomato {
+  background-image: url('./images/tomato.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100vw;
+  height: auto;
+  min-height: 450px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .timer {
+    font-size: 8rem;
+    padding-top: 10%;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
+}
+
+.time-paused {
+  margin-top: 30px;
+
+  span {
+    padding: 5px 10px;
+    background-color: #D3F9F3;
+    border: solid 1px #189C87;
+  }
+}
+
+.section-buttons {
+  display: flex;
+  margin-top: 40px;
+}
+
+.btn {
+  background-color: #FFB8AB;
+  border: solid 1px black;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin: 10px;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.time-slots-display {
+  margin-top: 40px;
+  word-spacing: 0.3em;
+
+  .slot {
+    font-size: 0.9em;
+    background-color: #EEF3FF;
+    border: solid 1px #C8D7FB;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+
+    .time-type {
+      color: black;
+
+      .type {
+        color: #1D2A4B;
+        font-weight: bold;
+      }
+    }
+
+    .time-display {
+      color: grey;
+    }
+  }
+}
