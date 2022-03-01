@@ -3,7 +3,7 @@
 Pomodoro Timer    
 Break down your focus periods into 25 minutes slots followed by 5 minutes resting time.
 
-[Pomodora](https://url).
+[Visit and use pomodora!](https://url).
 
 ![image of pomodora character](https://github.com/monifasol/pomodora/blob/master/src/images/tomato-github.png)
 
