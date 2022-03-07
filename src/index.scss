@@ -22,7 +22,7 @@ p {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 250px;
+    width: 220px;
   }
 }
 
@@ -30,8 +30,50 @@ p {
   display: flex;
   flex-direction: row;
 
+  .history-slots {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    transform: translateY(-110%);
+    transition: all 1s 0s ease-in-out;
+    background-color: #D3F9F3;
+    border: solid 1px #189C87;
+    border-radius: 6px;
+    padding: 8px 20px;
+
+    &.show {
+      transform: translateY(0);
+    }
+  }
+
   .time-slots-display {
-    
+    margin-top: 40px;
+    word-spacing: 0.3em;
+  
+    .slot {
+      font-size: 0.9em;
+      background-color: #EEF3FF;
+      border: solid 1px #C8D7FB;
+      padding: 4px 8px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 10px;
+  
+      .time-type {
+        color: black;
+  
+        .type {
+          color: #1D2A4B;
+          font-weight: bold;
+        }
+      }
+  
+      .time-display {
+        color: grey;
+      }
+    }
   }
 
   .tomato-section {
@@ -39,89 +81,82 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+    margin-top: 20px;
 
-
-}
-
-
-
-
-.tomato {
-  background-image: url('./images/tomato.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 100vw;
-  height: auto;
-  min-height: 450px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .timer {
-    font-size: 8rem;
-    padding-top: 10%;
-    color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-  }
-}
-
-.time-paused {
-  margin-top: 30px;
-
-  span {
-    padding: 5px 10px;
-    background-color: #D3F9F3;
-    border: solid 1px #189C87;
-  }
-}
-
-.section-buttons {
-  display: flex;
-  margin-top: 40px;
-}
-
-.btn {
-  background-color: #FFB8AB;
-  border: solid 1px black;
-  border-radius: 6px;
-  padding: 4px 10px;
-  margin: 10px;
-  cursor: pointer;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-
-.time-slots-display {
-  margin-top: 40px;
-  word-spacing: 0.3em;
-
-  .slot {
-    font-size: 0.9em;
-    background-color: #EEF3FF;
-    border: solid 1px #C8D7FB;
-    padding: 4px 8px;
-    border-radius: 6px;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 10px;
-
-    .time-type {
-      color: black;
-
-      .type {
-        color: #1D2A4B;
-        font-weight: bold;
+    .arm-banner {
+      background-image: url('./images/arm-banner.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 100%;
+      height: 220px;
+      text-align: center;
+      margin-bottom: -125px;
+      margin-left: -10px;
+      z-index: -1;
+      display: flex;
+      justify-content: center;
+      align-items: self-start;
+      
+      &-text {
+        margin-top: 7px;
+        width: 160px;
+        height: 46px;
+        line-height: 1.6em;
+        font-size: 0.9em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
 
-    .time-display {
-      color: grey;
+    .tomato {
+      background-image: url('./images/tomato.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      min-width: 100%;
+      height: auto;
+      min-height: 450px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //transition: all 0.5s 0s;
+    
+      .timer {
+        font-size: 7.2rem;
+        padding: 16% 20px 0px;
+        color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
+    }
+    
+    .section-buttons {
+      display: flex;
+      margin-top: 40px;
+    }
+    
+    .btn {
+      background-image: url('./images/button-green.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 110px;
+      height: 110px;
+      margin: 0 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      
+      span {
+        font-size: 0.9em;
+        padding: 20px;
+        width: 70vw;
+      }
     }
   }
 }
