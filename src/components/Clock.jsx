@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from 'react';
-//import tomato from './images/logo.png';
 
 const Clock = () => {
 
@@ -153,81 +152,79 @@ const Clock = () => {
   return (
     <>
 
-      <div className='main-flex-container'>
+      <span onClick={showTimeSlots} className='show-history btn lila'>
+        Show history
+      </span>
 
-        <span onClick={showTimeSlots} className='show-history'>Show history</span>
+      <div className='history-time-slots'>
 
-        <div className='history-time-slots'>
+        { !timeSlots || timeSlots.length === 0 && `There is no history yet.`}
 
-          { !timeSlots || timeSlots.length === 0 && `There is no history yet.`}
-
-          { timeSlots && timeSlots.map( (slot, i) => (
-            
-            <div className='slot' key={i}>
-              <p className='time-type'>
-                ⏰ <span className='type'>{ slot.type }</span> time: 
-              </p>
-              <p className='time-display'>
-                { generateTimeString(slot.startTime) } to { generateTimeString(slot.endTime) }
-              </p>
-            </div>
-
-          ))}
-
-        </div>  {/* end time slots display section (LEFT in flex) */}
-
-        <div className='tomato-section'>
-
-          <div className='arm-banner'>
-              <span className='arm-banner-text'>{ timerStates[currentState] }</span>
+        { timeSlots && timeSlots.map( (slot, i) => (
+          
+          <div className='slot' key={i}>
+            <p className='time-type'>
+              ⏰ <span className='type'>{ slot.type }</span> time: 
+            </p>
+            <p className='time-display'>
+              { generateTimeString(slot.startTime) } to { generateTimeString(slot.endTime) }
+            </p>
           </div>
 
-          <div className='tomato'>
-            <div className='timer'>
-              <span>{ digitToDisplay(minutesLeft) }</span>
-              :
-              <span>{ digitToDisplay(secondsLeft) }</span>
-            </div>
+        ))}
+      </div> 
+
+      <div className='tomato-section'>
+
+        <div className='arm-banner'>
+            <span className='arm-banner-text'>{ timerStates[currentState] }</span>
+        </div>
+
+        <div className='tomato'>
+          <div className='timer'>
+            <span>{ digitToDisplay(minutesLeft) }</span>
+            :
+            <span>{ digitToDisplay(secondsLeft) }</span>
           </div>
+        </div>
 
-          <div className='section-buttons'>
+        <div className='section-buttons'>
 
-            { currentState === 0 ? 
-              <div className='btn' onClick={runTimer}>
-                <span>Start!</span>
-              </div>
-              :
-              <div className='btn' onClick={stopResumeTimer}>
+          { currentState === 0 ? 
+            <div className='btn green' onClick={runTimer}>
+              <span>Start!</span>
+            </div>
+            :
+            <div className='btn orange' onClick={stopResumeTimer}>
+              <span> 
+                { isTimeRunning() && 'Pause timer' }
+                { isTimePaused() && 'Resume timer' }
+              </span>
+            </div>
+          }
+
+          { currentState !== 0 && 
+            <>
+              <div className='btn green' onClick={resetTimer}>
                 <span> 
-                  { isTimeRunning() && 'Pause timer' }
-                  { isTimePaused() && 'Resume timer' }
+                  Reset
+                  { isFocusTime() && ' focus time' }
+                  { isRestingTime() && ' resting time' }
                 </span>
               </div>
-            }
 
-            { currentState !== 0 && 
-              <>
-                <div className='btn' onClick={resetTimer}>
-                  <span> 
-                    Reset
-                    { isFocusTime() && ' focus time' }
-                    { isRestingTime() && ' resting time' }
-                  </span>
-                </div>
+              <div className='btn green' onClick={switchTo}>
+                <span>
+                  Switch to 
+                  { isFocusTime() && ' resting time' }
+                  { isRestingTime() && ' focus time' }
+                </span>
+              </div>
+            </>
+          }
 
-                <div className='btn' onClick={switchTo}>
-                  <span>
-                    Switch to 
-                    { isFocusTime() && ' resting time' }
-                    { isRestingTime() && ' focus time' }
-                  </span>
-                </div>
-              </>
-            }
-
-          </div>
-        </div> {/* end tomato section (RIGHT in flex) */}
-      </div>
+        </div>
+      </div> 
     </>
   );
 };
