@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a6a6d563.css",
+    "main.js": "/static/js/main.860b766e.js",
+    "static/js/787.0e3fc1b4.chunk.js": "/static/js/787.0e3fc1b4.chunk.js",
+    "static/media/tomato.png": "/static/media/tomato.a5210274548caa6c6752.png",
+    "static/media/logo.png": "/static/media/logo.6875bfccc9df0fbb5071.png",
+    "static/media/arm-banner.png": "/static/media/arm-banner.090421cfb4b2e5bd06ff.png",
+    "static/media/button-green.png": "/static/media/button-green.b274f144a4b25cd4e4ca.png",
+    "index.html": "/index.html",
+    "main.a6a6d563.css.map": "/static/css/main.a6a6d563.css.map",
+    "main.860b766e.js.map": "/static/js/main.860b766e.js.map",
+    "787.0e3fc1b4.chunk.js.map": "/static/js/787.0e3fc1b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6a6d563.css",
+    "static/js/main.860b766e.js"
+  ]
+}
