@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Hubballi&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
 body {
   margin: 0;
   color: #333;
   background-color: #FFECF3;
-  font-family: "Libre Baskerville", serif;
-  font-size: 14px;
+  font-family: "Hubballi", cursive;
+  font-size: 17px;
 }
 
 p {
@@ -16,74 +17,36 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 70px;
-}
-.pomodora .logo-pomodora {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 220px;
+  height: 100vh;
+  height: calc(100vh - 20px);
+  min-height: 680px;
+  width: 100vw;
+  margin: 10px;
+  overflow: hidden;
 }
 
-.main-flex-container {
-  display: flex;
-  flex-direction: row;
+.logo-pomodora {
+  width: auto;
+  height: 8%;
 }
-.main-flex-container .show-history {
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  border: solid 1px #D166B3;
-  background-color: #FFE7F8;
-  border-radius: 3px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-.main-flex-container .history-time-slots {
-  position: absolute;
-  top: 160px;
-  left: 5px;
-  word-spacing: 0.1em;
-  background-color: #FFE7F8;
-  border: solid 1px #D166B3;
-  border-radius: 3px;
-  padding: 8px 20px 8px 10px;
-  transform: translateX(-110%);
-  transition: all 1s 0s ease-in-out;
-}
-.main-flex-container .history-time-slots.show {
-  transform: translateX(0);
-}
-.main-flex-container .history-time-slots .slot {
-  padding: 4px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 10px;
-}
-.main-flex-container .history-time-slots .slot .time-type {
-  color: black;
-}
-.main-flex-container .history-time-slots .slot .time-type .type {
-  font-weight: bold;
-}
-.main-flex-container .history-time-slots .slot .time-display {
-  color: #333;
-}
-.main-flex-container .tomato-section {
+
+.tomato-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  height: 92%;
+  width: 100%;
+  max-width: 600px;
 }
-.main-flex-container .tomato-section .arm-banner {
+.tomato-section .arm-banner {
   background-image: url("./images/arm-banner.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   width: 100%;
-  height: 220px;
+  height: 30%;
   text-align: center;
   margin-bottom: -125px;
   margin-left: -10px;
@@ -91,57 +54,114 @@ p {
   display: flex;
   justify-content: center;
   align-items: self-start;
+  font-weight: bold;
 }
-.main-flex-container .tomato-section .arm-banner-text {
+.tomato-section .arm-banner-text {
   margin-top: 7px;
   width: 160px;
   height: 46px;
-  line-height: 1.6em;
+  line-height: 1.4em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.main-flex-container .tomato-section .tomato {
+.tomato-section .tomato {
   background-image: url("./images/tomato.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  min-width: 100%;
-  height: auto;
-  min-height: 450px;
+  width: 100%;
+  height: 70%;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main-flex-container .tomato-section .tomato .timer {
-  font-size: 7.2rem;
-  padding: 16% 20px 0px;
+.tomato-section .tomato .timer {
+  font-family: "Libre Baskerville", serif;
+  font-size: 7.5rem;
+  padding: 50px 0 0 0;
   color: white;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
-.main-flex-container .tomato-section .section-buttons {
+.tomato-section .section-buttons {
   display: flex;
-  margin-top: 40px;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
 }
-.main-flex-container .tomato-section .btn {
-  background-image: url("./images/button-green.png");
+
+.btn {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   width: 110px;
   height: 110px;
-  margin: 0 20px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
+  line-height: 1em;
   cursor: pointer;
 }
-.main-flex-container .tomato-section .btn span {
+.btn span {
   padding: 20px;
   width: 70vw;
+}
+.btn.green {
+  background-image: url("./images/button-green.png");
+}
+.btn.lila {
+  background-image: url("./images/button-lila.png");
+}
+.btn.show-history {
+  width: 80px;
+  margin: 0px;
+}
+.btn.orange {
+  background-image: url("./images/button-orange.png");
+}
+
+.show-history {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.history-time-slots {
+  position: absolute;
+  top: 220px;
+  right: 15px;
+  word-spacing: 0.1em;
+  background-color: #FFE7F8;
+  border: solid 1px #D166B3;
+  border-radius: 3px;
+  padding: 8px 20px 8px 10px;
+  transform: translateX(110%);
+  transition: all 1s 0s ease-in-out;
+}
+.history-time-slots.show {
+  transform: translateX(0);
+}
+.history-time-slots .slot {
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+.history-time-slots .slot .time-type {
+  color: black;
+}
+.history-time-slots .slot .time-type .type {
+  font-weight: bold;
+}
+.history-time-slots .slot .time-display {
+  color: #333;
 }
 
 /*# sourceMappingURL=index.css.map */
