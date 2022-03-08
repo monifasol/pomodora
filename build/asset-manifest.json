@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/pomodora/build/static/css/main.6d5d6fe6.css",
-    "main.js": "/pomodora/build/static/js/main.5d98b60d.js",
-    "static/js/787.0e3fc1b4.chunk.js": "/pomodora/build/static/js/787.0e3fc1b4.chunk.js",
-    "static/media/tomato.png": "/pomodora/build/static/media/tomato.a5210274548caa6c6752.png",
-    "static/media/logo.png": "/pomodora/build/static/media/logo.6875bfccc9df0fbb5071.png",
-    "static/media/arm-banner.png": "/pomodora/build/static/media/arm-banner.090421cfb4b2e5bd06ff.png",
-    "static/media/button-green.png": "/pomodora/build/static/media/button-green.b274f144a4b25cd4e4ca.png",
-    "index.html": "/pomodora/build/index.html",
-    "main.6d5d6fe6.css.map": "/pomodora/build/static/css/main.6d5d6fe6.css.map",
-    "main.5d98b60d.js.map": "/pomodora/build/static/js/main.5d98b60d.js.map",
-    "787.0e3fc1b4.chunk.js.map": "/pomodora/build/static/js/787.0e3fc1b4.chunk.js.map"
+    "main.css": "/pomodora/static/css/main.5705ec4a.css",
+    "main.js": "/pomodora/static/js/main.1b2d3855.js",
+    "static/js/787.0e3fc1b4.chunk.js": "/pomodora/static/js/787.0e3fc1b4.chunk.js",
+    "static/media/tomato.png": "/pomodora/static/media/tomato.a5210274548caa6c6752.png",
+    "static/media/logo.png": "/pomodora/static/media/logo.6875bfccc9df0fbb5071.png",
+    "static/media/arm-banner.png": "/pomodora/static/media/arm-banner.090421cfb4b2e5bd06ff.png",
+    "static/media/button-green.png": "/pomodora/static/media/button-green.b274f144a4b25cd4e4ca.png",
+    "index.html": "/pomodora/index.html",
+    "main.5705ec4a.css.map": "/pomodora/static/css/main.5705ec4a.css.map",
+    "main.1b2d3855.js.map": "/pomodora/static/js/main.1b2d3855.js.map",
+    "787.0e3fc1b4.chunk.js.map": "/pomodora/static/js/787.0e3fc1b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d5d6fe6.css",
-    "static/js/main.5d98b60d.js"
+    "static/css/main.5705ec4a.css",
+    "static/js/main.1b2d3855.js"
   ]
 }
