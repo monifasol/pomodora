@@ -3,9 +3,9 @@ import { React, useState, useEffect } from 'react';
 
 const Clock = () => {
 
-  const maxMinutesFocus = 2;
-  const maxMinutesRest = 1;
-  const maxSeconds = 10;
+  const maxMinutesFocus = 25;
+  const maxMinutesRest = 5;
+  const maxSeconds = 59;
 
   const [ currentState, setCurrentState ] = useState(0);
   const [ minutesLeft, setMinutesLeft ] = useState(maxMinutesFocus);
@@ -144,13 +144,22 @@ const Clock = () => {
 
   const isTimePaused = () => currentState === 2 || currentState === 4;
 
+  const showTimeSlots = () => {
+    const showHistory = document.querySelector('.show-history');
+    showHistory.textContent = (showHistory.textContent === 'Show history') ? 'Hide history' : 'Show history';
+    document.querySelector('.history-time-slots').classList.toggle('show');
+  }
 
   return (
     <>
 
       <div className='main-flex-container'>
 
-        <div className='time-slots-display'>
+        <span onClick={showTimeSlots} className='show-history'>Show history</span>
+
+        <div className='history-time-slots'>
+
+          { !timeSlots || timeSlots.length === 0 && `There is no history yet.`}
 
           { timeSlots && timeSlots.map( (slot, i) => (
             
@@ -159,7 +168,7 @@ const Clock = () => {
                 ⏰ <span className='type'>{ slot.type }</span> time: 
               </p>
               <p className='time-display'>
-                { generateTimeString(slot.startTime) } to { generateTimeString(slot.endTime) } h
+                { generateTimeString(slot.startTime) } to { generateTimeString(slot.endTime) }
               </p>
             </div>
 
