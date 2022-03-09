@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
 
-const Clock = () => {
+const Clock = ( props ) => {
 
   const maxMinutesFocus = 25;
   const maxMinutesRest = 5;
@@ -9,8 +9,6 @@ const Clock = () => {
   const [ currentState, setCurrentState ] = useState(0);
   const [ minutesLeft, setMinutesLeft ] = useState(maxMinutesFocus);
   const [ secondsLeft, setSecondsLeft ] = useState(0);
-  const [ currentSlot, setCurrentSlot ] = useState({});
-  const [ timeSlots, setTimeSlots ] = useState([]);
 
   let intervalTimerId = 0;
 
@@ -39,28 +37,13 @@ const Clock = () => {
     intervalTimerId = setInterval( () => { updateTimer(); }, 1000);    // every 1 sec
   };
 
-  const createSlot = (typeSlot) => {
-
-    let newSlot = { 
-      type: typeSlot,
-      startTime: new Date(),
-      endTime: null
-    };
-
-    setCurrentSlot(newSlot);
-  };
-
-  const endSlot = () => {
-    //console.log('END SLOT. End time should be updated and slot added to array.');
-    currentSlot.endTime = new Date();
-    setTimeSlots([currentSlot, ...timeSlots]);
-    switchTo();
-  };
-
   const updateTimer = () => {
 
     // if the time for the slot is gone, we end it
-    if (minutesLeft === 0 && secondsLeft === 0) endSlot();
+    if (minutesLeft === 0 && secondsLeft === 0) {
+      props.pushSlot();
+      switchTo();
+    }
 
     // If it's initial state OR if focus time slot just started
     // Then, create new slot of focus time!
@@ -68,14 +51,14 @@ const Clock = () => {
         (currentState === 1 && minutesLeft === (maxMinutesFocus - 1) && secondsLeft === maxSeconds)
        ) {
       setCurrentState(1);     // 1 = focus time
-      createSlot('focus');
+      props.createSlot('focus');
     }
 
     // If it's initial state OR if resting time slot just started
     // Then, create new slot of resting time!
     if (currentState === 3 && minutesLeft === (maxMinutesRest - 1) && secondsLeft === maxSeconds) {
       setCurrentState(3);     // 3 = rest time
-      createSlot('rest');
+      props.createSlot('rest');
     }
 
     // Set seconds left
@@ -130,11 +113,6 @@ const Clock = () => {
     }
   };
 
-  const generateTimeString = (time) => {
-    let options = { hour: '2-digit', minute: '2-digit' };
-    return time.toLocaleTimeString([], options);
-  };
-
   const isFocusTime = () => currentState === 1 || currentState === 2;
 
   const isRestingTime = () => currentState === 3 || currentState === 4 || currentState === 5;
@@ -143,89 +121,58 @@ const Clock = () => {
 
   const isTimePaused = () => currentState === 2 || currentState === 4;
 
-  const showTimeSlots = () => {
-    const showHistory = document.querySelector('.show-history');
-    showHistory.textContent = (showHistory.textContent === 'Show history') ? 'Hide history' : 'Show history';
-    document.querySelector('.history-time-slots').classList.toggle('show');
-  }
-
   return (
-    <>
+    <div className='tomato-section'>
 
-      <span onClick={showTimeSlots} className='show-history btn lila'>
-        Show history
-      </span>
+      <div className='arm-banner'>
+          <span className='arm-banner-text'>{ timerStates[currentState] }</span>
+      </div>
 
-      <div className='history-time-slots'>
-
-        { !timeSlots || timeSlots.length === 0 && `There is no history yet.`}
-
-        { timeSlots && timeSlots.map( (slot, i) => (
-          
-          <div className='slot' key={i}>
-            <p className='time-type'>
-              ⏰ <span className='type'>{ slot.type }</span> time: 
-            </p>
-            <p className='time-display'>
-              { generateTimeString(slot.startTime) } to { generateTimeString(slot.endTime) }
-            </p>
-          </div>
-
-        ))}
-      </div> 
-
-      <div className='tomato-section'>
-
-        <div className='arm-banner'>
-            <span className='arm-banner-text'>{ timerStates[currentState] }</span>
+      <div className='tomato'>
+        <div className='timer'>
+          <span>{ digitToDisplay(minutesLeft) }</span>
+          :
+          <span>{ digitToDisplay(secondsLeft) }</span>
         </div>
+      </div>
 
-        <div className='tomato'>
-          <div className='timer'>
-            <span>{ digitToDisplay(minutesLeft) }</span>
-            :
-            <span>{ digitToDisplay(secondsLeft) }</span>
+      <div className='section-buttons'>
+
+        { currentState === 0 ? 
+          <div className='btn green' onClick={runTimer}>
+            <span>Start!</span>
           </div>
-        </div>
+          :
+          <div className='btn orange' onClick={stopResumeTimer}>
+            <span> 
+              { isTimeRunning() && 'Pause timer' }
+              { isTimePaused() && 'Resume timer' }
+            </span>
+          </div>
+        }
 
-        <div className='section-buttons'>
-
-          { currentState === 0 ? 
-            <div className='btn green' onClick={runTimer}>
-              <span>Start!</span>
-            </div>
-            :
-            <div className='btn orange' onClick={stopResumeTimer}>
+        { currentState !== 0 && 
+          <>
+            <div className='btn green' onClick={resetTimer}>
               <span> 
-                { isTimeRunning() && 'Pause timer' }
-                { isTimePaused() && 'Resume timer' }
+                Reset
+                { isFocusTime() && ' focus time' }
+                { isRestingTime() && ' break time' }
               </span>
             </div>
-          }
 
-          { currentState !== 0 && 
-            <>
-              <div className='btn green' onClick={resetTimer}>
-                <span> 
-                  Reset
-                  { isFocusTime() && ' focus time' }
-                  { isRestingTime() && ' resting time' }
-                </span>
-              </div>
+            <div className='btn green' onClick={switchTo}>
+              <span>
+                Switch to 
+                { isFocusTime() && ' break' }
+                { isRestingTime() && ' focus time' }
+              </span>
+            </div>
+          </>
+        }
 
-              <div className='btn green' onClick={switchTo}>
-                <span>
-                  Switch to 
-                  { isFocusTime() && ' resting time' }
-                  { isRestingTime() && ' focus time' }
-                </span>
-              </div>
-            </>
-          }
-
-        </div>
-      </div> 
-    </>
+      </div>
+    </div> 
   );
 };
 

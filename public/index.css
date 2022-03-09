@@ -6,6 +6,7 @@ body {
   background-color: #FFECF3;
   font-family: "Hubballi", cursive;
   font-size: 17px;
+  overflow: hidden;
 }
 
 p {
@@ -19,15 +20,31 @@ p {
   justify-content: center;
   height: 100vh;
   height: calc(100vh - 20px);
-  min-height: 680px;
   width: 100vw;
-  margin: 10px;
   overflow: hidden;
+  margin: 10px;
 }
-
-.logo-pomodora {
-  width: auto;
+.pomodora .header {
   height: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100vw;
+  min-height: 45px;
+}
+.pomodora .header .logo-pomodora {
+  width: auto;
+}
+.pomodora .header .show-history {
+  margin: 0px;
+  height: auto;
+  min-height: 65px;
+  cursor: pointer;
+}
+@media all and (min-width: 650px) {
+  .pomodora .header .show-history {
+    min-height: 90px;
+  }
 }
 
 .tomato-section {
@@ -38,7 +55,6 @@ p {
   margin-top: 20px;
   height: 92%;
   width: 100%;
-  max-width: 600px;
 }
 .tomato-section .arm-banner {
   background-image: url("./images/arm-banner.png");
@@ -47,6 +63,7 @@ p {
   background-position: center;
   width: 100%;
   height: 30%;
+  min-height: 180px;
   text-align: center;
   margin-bottom: -125px;
   margin-left: -10px;
@@ -57,10 +74,10 @@ p {
   font-weight: bold;
 }
 .tomato-section .arm-banner-text {
-  margin-top: 7px;
+  margin-top: 0.5%;
   width: 160px;
   height: 46px;
-  line-height: 1.4em;
+  line-height: 1.2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,25 +96,31 @@ p {
 }
 .tomato-section .tomato .timer {
   font-family: "Libre Baskerville", serif;
-  font-size: 7.5rem;
+  font-size: 16vh;
   padding: 50px 0 0 0;
   color: white;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 .tomato-section .section-buttons {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
   align-items: center;
+}
+@media all and (min-width: 650px) {
+  .tomato-section .section-buttons {
+    justify-content: center;
+  }
 }
 
 .btn {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  width: 110px;
-  height: 110px;
+  width: 98px;
+  height: 70px;
+  padding: 6px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -105,6 +128,12 @@ p {
   font-weight: bold;
   line-height: 1em;
   cursor: pointer;
+}
+@media all and (min-width: 650px) {
+  .btn {
+    margin: 0 20px;
+    height: 90px;
+  }
 }
 .btn span {
   padding: 20px;
@@ -124,17 +153,9 @@ p {
   background-image: url("./images/button-orange.png");
 }
 
-.show-history {
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  padding: 10px;
-  cursor: pointer;
-}
-
 .history-time-slots {
   position: absolute;
-  top: 220px;
+  top: 110px;
   right: 15px;
   word-spacing: 0.1em;
   background-color: #FFE7F8;
