@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pomodora/static/css/main.cf23480a.css",
-    "main.js": "/pomodora/static/js/main.f08b4d5b.js",
+    "main.css": "/pomodora/static/css/main.ad3af688.css",
+    "main.js": "/pomodora/static/js/main.22f4ef84.js",
     "static/js/787.0e3fc1b4.chunk.js": "/pomodora/static/js/787.0e3fc1b4.chunk.js",
     "static/media/tomato.png": "/pomodora/static/media/tomato.a5210274548caa6c6752.png",
     "static/media/logo.png": "/pomodora/static/media/logo.6875bfccc9df0fbb5071.png",
@@ -10,12 +10,12 @@
     "static/media/button-lila.png": "/pomodora/static/media/button-lila.d0334f0dbc4fb4852507.png",
     "static/media/button-orange.png": "/pomodora/static/media/button-orange.cc3d694d493a091afd0a.png",
     "index.html": "/pomodora/index.html",
-    "main.cf23480a.css.map": "/pomodora/static/css/main.cf23480a.css.map",
-    "main.f08b4d5b.js.map": "/pomodora/static/js/main.f08b4d5b.js.map",
+    "main.ad3af688.css.map": "/pomodora/static/css/main.ad3af688.css.map",
+    "main.22f4ef84.js.map": "/pomodora/static/js/main.22f4ef84.js.map",
     "787.0e3fc1b4.chunk.js.map": "/pomodora/static/js/787.0e3fc1b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf23480a.css",
-    "static/js/main.f08b4d5b.js"
+    "static/css/main.ad3af688.css",
+    "static/js/main.22f4ef84.js"
   ]
 }
